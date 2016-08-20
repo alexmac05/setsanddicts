@@ -53,3 +53,19 @@
 #        return None
 
 #print "John Doe's phone number is", find_phonenumber(phonebook, "John Doe")
+
+# Exercise 5 : Build a phone book using dictionary
+
+#answer
+#phonebook = {
+#    "John Doe": "555-555-5555",
+#    "Albert Einstein" : "212-555-5555",
+#}
+#print "John Doe's phone number is", phonebook["John Doe"]
+
+
+# Exercise 6 :
+# Create a function that times the performance of the list-bisect method
+# versus a dictionary for finding a number in a phone book.
+# How does the timing scale as the size of the phone book grows?
+
