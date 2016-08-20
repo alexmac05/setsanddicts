@@ -68,9 +68,19 @@
 # Create a function that times the performance of the list-bisect method
 # versus a dictionary for finding a number in a phone book.
 # How does the timing scale as the size of the phone book grows?
+#https://docs.python.org/3.5/library/timeit.html
 
-#STEP 1 - Create a list
+#Concept of a hash table
+#Concept of open addressing (one object per bucket) and chaining (linked list in each bucket)
 
+#Lookup for a dictionary is constant because O(n) lookup and O(1) for insertion
+
+#A unique object that can
+
+# Excercise 7 - very simple hash table for illustration
+#KEY AND VALUE
+
+# Exercise 8 -
 
 
 
