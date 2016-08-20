@@ -1,0 +1,39 @@
+Exercises around dictionaries and sets
+
+
+Printing out duplicates using a for loop:
+
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+deduped = []
+
+for value in some_list:
+    if value not in deduped:
+        duplicates.append(some_list.pop(value))
+
+print(some_list)
+
+
+
+
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+duplicates = set(x for x in some_list if some_list.count(x) > 1)
+print(duplicates)
+
+___________________________________________
+
+Printing out de-duped list using a for loop:
+
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+
+deduped = []
+for value in some_list:
+	if value not in deduped:
+		deduped.append(value)
+
+print(deduped)
+
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+deduped = set(some_list)
+print(deduped)
+
+
