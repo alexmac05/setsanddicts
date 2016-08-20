@@ -64,8 +64,13 @@
 #print "John Doe's phone number is", phonebook["John Doe"]
 
 
-# Exercise 6 :
+# Discussion 6 :
 # Create a function that times the performance of the list-bisect method
 # versus a dictionary for finding a number in a phone book.
 # How does the timing scale as the size of the phone book grows?
+
+#STEP 1 - Create a list
+
+
+
 
