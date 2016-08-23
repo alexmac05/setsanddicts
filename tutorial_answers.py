@@ -12,16 +12,16 @@
 # Cool link https://www.peterbe.com/plog/uniqifiers-benchmark
 # https://wiki.python.org/moin/TimeComplexity
 
-# myList = ['c', 'd', 'c', 'a', 'b', 'c', 'a', 'z', 'd', 'e', 'f', 'f', 'g']
-#TODO: ALEX - just fix this up
+#myList = ['c', 'd', 'c', 'a', 'b', 'c', 'a', 'z', 'd', 'e', 'f', 'f', 'g']
 
-# ANWSER
-# newList = []
-# for i in myList:
+
+# Answer Question 2
+#newList = []
+#for i in myList:
 #    if i not in newList:
 #        newList.append(i)
 
-# print(newList)
+#print(newList)
 
 
 #TODO: BETHANY - write 4 LIST comphrenehsions to teach comphrenehsnions here! PYTHONIC
@@ -38,8 +38,55 @@
 
 
 
+#Question 3 - Create a list of the months of a year 'jan', 'feb', .... ' dec'
+# and use the tuple(myList) function to create a tuple of the list
+# Mess around with the list methods, count, index, insert, pop, remove, reverse, append and sort
+# Notice any differences between tuples and lists
+
+# Background: You can change a list. You cannot change a tuple.
+# Another way to say that is lists are mutable and tuples are immutable.
+#
+# Create a list and create a tuple both that represent the months of a year
+
+#Answer 3
+myListMonths = ['January', 'Feb', 'march', 'april', 'may', 'june', 'july', 'august', 'sept', 'oct', 'nov', 'dec', 'January']
+myTupleMonths = tuple(myListMonths)
+
+#count
+# lists
+count = myListMonths.count('January')
+print(count)
+#Tuples
+count = myTupleMonths.count('January')
+print(count)
+
+#index
+
+
+
+
+
+
+
+
 #TODO: ALEX - clean up, Alex to talk about tuples introduce that and lists of tuples why it is helpful
 #TUPLES - unique and difference between tuples and lists
+#Exercise - Unpacking a sequence into separate variables
+# This section is from the python cookbook, 3rd edition
+# You can unpack any sequence into variables using a simple assignment operation. The only requirement is that
+# the number of variables and structure match the sequence.
+# Example
+#p = (4,5) # a tuple
+#x, y = p
+#print(x)
+#print(y)
+
+#data = ['ACME', 50, 91.1, (2012, 12, 21)]
+#names, shares, price, date = data
+#print(date)
+
+
+
 #TUPLES ARE HASHABLE - gotcha
 # Exercise 3: Build an address book only using lists (the lists can be lists of tuples of objects)
 
@@ -88,6 +135,53 @@
 # SECTION ON BEGINNING DICTIONARY STUFF - Python Pocket reference section
 # Fluent python here the beginning section
 #TODO ALEX _ THIS ENDS THE ALEX SESSION
+
+#Section that plays with Dictionaries
+
+#Section on initialization - take from O'Reilly Python Pocket Reference by Mark Lutz
+
+#Any immutable object can be a dictionary key (string, number, tuple)
+#Class instances can be keys if they inherit hashing methods
+
+# A two item dictionary: keys 'spam' and 'eggs'
+A = {'spam': 2, 'eggs':3}
+
+#Nested dictionaries
+B = { 'info': {42: 1, type(''):2, 'spam':[]}}
+
+#Creates a dictionary by passing keyword arguments to the type constructor
+C = dict(name='Bob', age=45, job=('mgr', 'dev'))
+
+#Dictionary comprehension expression
+D = {c.upper(): ord(c) for c in 'spam'}
+
+E = {} # an empty dictionary
+
+#Exercises for this section
+#STEP 1 - Print out all of the keys for dictionary A
+#print(A.keys())
+
+#STEP 2 - Print out all of the values for dictionary D
+#print(D.values())
+
+#STEP 3 - play with the C.items() function.
+#print(C.items())
+
+#Step 4 - How would you clear all of the items from dictionary A?
+#A.clear()
+#print(A)
+
+#Step 5 - Put the values back in A and do a copy (shallow copy) then change a value and print out both
+#F = A.copy()
+#print(F)
+#F['spam'] = 4
+#print(A)
+#print(F)
+
+#Step 6 - iterate through the dictionary D
+#http://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops-in-python
+#for key, value in D.items():
+#    print key, 'corresponds to', D[key]
 
 
 # TO DO : BETHANY - WRITE exercises on this
@@ -165,15 +259,15 @@
 
 
 #AFTER
-some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
-deduped = []
+#some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+#deduped = []
 
-for value in some_list:
-    if value not in deduped:
-        deduped.append(some_list.pop(some_list.index(value)))
+#for value in some_list:
+#    if value not in deduped:
+#        deduped.append(some_list.pop(some_list.index(value)))
 
-print(deduped)
-print(some_list)
+#print(deduped)
+#print(some_list)
 
 #read the dict from start to finish and collect the needed additions in a second dict. Then update the first one with it.
 #Exercise to
@@ -199,6 +293,15 @@ print(some_list)
 #TO DO ALEX
 # USES
 # PYTHON COOKBOOK
+#a = { 'x':1, 'y':2, 'z':3 }
+#b = { 'w': 10, 'x': 11, 'y': 12 }
+
+
+
+# Question - can you do this with a dictionary
+
+
+
 
 
 
@@ -209,7 +312,7 @@ print(some_list)
 # Fluent python here Variations of dict - COLLECTIONS stuff
 
 
-#END EXAMPLES - for people finished 
+#END EXAMPLES - for people finished
 #FIND THE MOST Efficient solution for debbing a large list. I want a list of the duplicates and a debbed list and i don't
 #want duplicates in the dubbed list
 
