@@ -5,6 +5,7 @@
 
 #TODO: ALEX - have some memory sticks of tutorial
 
+#ALEX
 # Question 2: Get rid of all of the duplicates in this list.
 # Think about the complexity of your solution.
 # Complexity cheetsheet http://bigocheatsheet.com/
@@ -37,7 +38,7 @@
 
 
 
-
+#ALEX
 #Question 3 - Create a list of the months of a year 'jan', 'feb', .... ' dec'
 # and use the tuple(myList) function to create a tuple of the list
 # Mess around with the list methods, count, index, insert, pop, remove, reverse, append and sort
@@ -49,16 +50,16 @@
 # Create a list and create a tuple both that represent the months of a year
 
 #Answer 3
-myListMonths = ['January', 'Feb', 'march', 'april', 'may', 'june', 'july', 'august', 'sept', 'oct', 'nov', 'dec', 'January']
-myTupleMonths = tuple(myListMonths)
+#myListMonths = ['January', 'Feb', 'march', 'april', 'may', 'june', 'july', 'august', 'sept', 'oct', 'nov', 'dec', 'January']
+#myTupleMonths = tuple(myListMonths)
 
 #count
 # lists
-count = myListMonths.count('January')
-print(count)
+#count = myListMonths.count('January')
+#print(count)
 #Tuples
-count = myTupleMonths.count('January')
-print(count)
+#count = myTupleMonths.count('January')
+#print(count)
 
 #index
 
@@ -131,10 +132,9 @@ print(count)
 # }
 # print "John Doe's phone number is", phonebook["John Doe"]
 
-
+#ALEX SECTION
 # SECTION ON BEGINNING DICTIONARY STUFF - Python Pocket reference section
 # Fluent python here the beginning section
-#TODO ALEX _ THIS ENDS THE ALEX SESSION
 
 #Section that plays with Dictionaries
 
@@ -144,18 +144,20 @@ print(count)
 #Class instances can be keys if they inherit hashing methods
 
 # A two item dictionary: keys 'spam' and 'eggs'
-A = {'spam': 2, 'eggs':3}
+#A = {'spam': 2, 'eggs':3}
 
 #Nested dictionaries
-B = { 'info': {42: 1, type(''):2, 'spam':[]}}
+#B = { 'info': {42: 1, type(''):2, 'spam':[]}}
 
 #Creates a dictionary by passing keyword arguments to the type constructor
-C = dict(name='Bob', age=45, job=('mgr', 'dev'))
+#C = dict(name='Bob', age=45, job=('mgr', 'dev'))
 
 #Dictionary comprehension expression
 D = {c.upper(): ord(c) for c in 'spam'}
+print(D)
+print(ord('s'))
 
-E = {} # an empty dictionary
+#E = {} # an empty dictionary
 
 #Exercises for this section
 #STEP 1 - Print out all of the keys for dictionary A
@@ -218,6 +220,17 @@ E = {} # an empty dictionary
 
 # Example of something that is unhashable - another list. lists are mutable. if a datatype is mutable it is not hashable
 # Because you can't reduce it to a unique value because it might change and the hash funciton would change.
+
+
+
+
+
+
+
+
+
+
+
 
 #TODO ALEX  - fluent python book
 # Exercise 8 - Illustrate the difference between a hash table and a set. (review dictionary )
