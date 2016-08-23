@@ -23,6 +23,8 @@
 #        newList.append(i)
 
 #print(newList)
+#---------------------------------------------------------------------------------------------------------------------
+
 
 
 #TODO: BETHANY - write 4 LIST comphrenehsions to teach comphrenehsnions here! PYTHONIC
@@ -35,6 +37,12 @@
 # some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
 # duplicates = [x for x in some_list if some_list.count(x) > 1]
 # print(duplicates)
+
+
+#15 to 20 mins
+#TODO : Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
+#EXERCISES - here
+#TODO: Show how tuple is immutable
 
 
 
@@ -125,12 +133,23 @@
 # TODO ALEX: CLEAN THIS UP
 # Exercise 5 : Build a phone book using dictionary
 
+# USES
+
+#a = { 'x':1, 'y':2, 'z':3 }
+#b = { 'w': 10, 'x': 11, 'y': 12 }
+
+
 # answer
 # phonebook = {
 #    "John Doe": "555-555-5555",
 #    "Albert Einstein" : "212-555-5555",
 # }
 # print "John Doe's phone number is", phonebook["John Doe"]
+
+#Vitamins and minerals that go with vegtables
+# Shoes and sizes of shoes but you want to track the type of shoe
+
+
 
 #ALEX SECTION
 # SECTION ON BEGINNING DICTIONARY STUFF - Python Pocket reference section
@@ -153,9 +172,9 @@
 #C = dict(name='Bob', age=45, job=('mgr', 'dev'))
 
 #Dictionary comprehension expression
-D = {c.upper(): ord(c) for c in 'spam'}
-print(D)
-print(ord('s'))
+#D = {c.upper(): ord(c) for c in 'spam'}
+#print(D)
+#print(ord('s'))
 
 #E = {} # an empty dictionary
 
@@ -185,10 +204,10 @@ print(ord('s'))
 #for key, value in D.items():
 #    print key, 'corresponds to', D[key]
 
-
+#--------------------------------------------------------------------------------------------------------------------
 # TO DO : BETHANY - WRITE exercises on this
 #BETHNAY - WORK IN SETTING DEFAULT FOR DICTIONARY
-# Dictionary comphensions
+# DICTIONARY COMPHREHENSIONS
 #END BETHANY SECTION
 
 
@@ -201,6 +220,10 @@ print(ord('s'))
 # SECTION FOR TIMEIT - BETHANY
 #BETHANY  - finding stuff in a list, finding stuff in a dictionary, adding stuff to a list and adding stuff to a dict
 # using timeit.
+#---------------------------------------------------------------------------------------------------------------------
+
+
+
 
 #TODO ALEX
 # Concept of a hash table
@@ -220,16 +243,6 @@ print(ord('s'))
 
 # Example of something that is unhashable - another list. lists are mutable. if a datatype is mutable it is not hashable
 # Because you can't reduce it to a unique value because it might change and the hash funciton would change.
-
-
-
-
-
-
-
-
-
-
 
 
 #TODO ALEX  - fluent python book
@@ -252,6 +265,7 @@ print(ord('s'))
 # intersaction = myListIsNowASet&myOtherListIsNowASet
 # print(intersaction)
 # https://docs.python.org/2/library/stdtypes.html#set
+#---------------------------------------------------------------------------------------------------------------------
 
 #TODO BETHANY - SET COMPREHENSIONS
 # Set Comprehensions - fluent programming book
@@ -263,17 +277,20 @@ print(ord('s'))
 # SECOND COMPHREHENSION EXAMPLE - TODO: BETHANY Super fast example dedupping with list and a set
 
 #TODO BETHANY - set logical examples
+#1.9 Finding Commonalities in Two Dictionaries chapter 1 Data Structures and Algorithms 3rd edition Python cookbook
 
+#____________________________________________________________________________________________________________________
 
 #TODO ALEX
-# ABUSES
+# ABUSES Of Dictionaries
 
 #Adding items to a dict may change the order of existing keys
 
+#MEMORY - don't put too much in memory
 
 #AFTER
 #some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
-#deduped = []
+#deduped = []jojofabe@gmail.com
 
 #for value in some_list:
 #    if value not in deduped:
@@ -302,29 +319,34 @@ print(ord('s'))
 
 # Set elements must be hashable objects.
 #
-
-#TO DO ALEX
-# USES
-# PYTHON COOKBOOK
-#a = { 'x':1, 'y':2, 'z':3 }
-#b = { 'w': 10, 'x': 11, 'y': 12 }
+#
 
 
 
-# Question - can you do this with a dictionary
+---------------------------------------------------------------------------------------------------------------------
+
+#TODO - JOUELLA PEP8 WHAT IS PYTHONIC - reserve indexiging with slicing and performance and other PEP 8 stuff
+#TIMEIT WILL HAVE BEEN INTRODUCED
 
 
 
 
 
-
-
+-
+--------------------------------------------------------------------------------------------------------------------
 #TODO BETHANY - Peppering stuff there
 # Counter, and default dict #DEQUE - double ended queue - as a stack or a queue (append to either end in constant time)
 # Ordered dictionaries
 # Fluent python here Variations of dict - COLLECTIONS stuff
 
 
+-------------------------------------------------------------------------------------------------------------------
+#TODO - JOUELLA - NAMED TUPLES
+
+
+#________________________________________________________________________________________________________________
+
+#TODO BETHANY - END SECTION 
 #END EXAMPLES - for people finished
 #FIND THE MOST Efficient solution for debbing a large list. I want a list of the duplicates and a debbed list and i don't
 #want duplicates in the dubbed list
