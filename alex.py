@@ -245,6 +245,63 @@
 # Because you can't reduce it to a unique value because it might change and the hash funciton would change.
 
 
+import re
+
+class HashTable:
+    myHashTable = []
+
+    def __init__(self):
+        self.myHashTable = [None] * 1000
+
+    def addToHash(self, name):
+        index = self.hashIt(name)
+        self.myHashTable[index] = name
+
+
+    def printHashTable(self):
+        for i, val in enumerate(self.myHashTable):
+            if val is not None:
+                print i, val
+
+    def hashIt(self, value):
+        #Take the first three letters of the string
+        #Get the ord('f') of each of these first three chars
+        #Add these
+        #return the hash for hashing
+        regExString = r'^[A-Za-z]{3}$'
+        m = re.match(regExString,value)
+        if m is not None:
+           a = ord(value[0])
+           b = ord(value[1])
+           c = ord(value[2])
+           d = a + b + c
+           print(str(a) + " " + str(b) + " " + str(c) + " " +  str(d))
+        else:
+            print(str + " Failed input - this function only takes 3 letters")
+
+        return d
+
+
+myHash = HashTable()
+myHash.addToHash('foo')
+myHash.addToHash('boo')
+myHash.addToHash(('cry'))
+myHash.addToHash('oof')
+results = myHash.printHashTable()
+print(results)
+
+
+
+
+
+
+
+
+
+
+
+
+
 #TODO ALEX  - fluent python book
 # Exercise 8 - Illustrate the difference between a hash table and a set. (review dictionary )
 # Sets are just hashtables without values or dictionaries without values. Lists are resizable arrays that track
@@ -323,7 +380,7 @@
 
 
 
----------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------
 
 #TODO - JOUELLA PEP8 WHAT IS PYTHONIC - reserve indexiging with slicing and performance and other PEP 8 stuff
 #TIMEIT WILL HAVE BEEN INTRODUCED
@@ -332,15 +389,15 @@
 
 
 
--
---------------------------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------------------------
 #TODO BETHANY - Peppering stuff there
 # Counter, and default dict #DEQUE - double ended queue - as a stack or a queue (append to either end in constant time)
 # Ordered dictionaries
 # Fluent python here Variations of dict - COLLECTIONS stuff
 
 
--------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------
 #TODO - JOUELLA - NAMED TUPLES
 
 
