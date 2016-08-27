@@ -335,18 +335,20 @@ Extra Method #3 using list slices #do NOT do this at home!!:
 solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for number in my_list]
 '''
 
-# ______________________________________
-
 ########################################################################################################################
+ #Exercise 12 - Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
+# def add_two(n):
+#   return n + 2
+# x = [add_two(i) for i in range(10)]
+# vs.
+# y = [i + 2 for i in range(10)]
 
-#TODO : Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
-#EXERCISES - here
-#TODO: Show how tuple is immutable
 
 
-########################################################################################################################
-#ALEX
-#Exercise 12 - Create a list of the months of a year 'jan', 'feb', .... ' dec'
+# #######################################################################################################################
+
+#Exercise 13 (Alex) -
+# Create a list of the months of a year 'jan', 'feb', .... ' dec'
 # and use the tuple(myList) function to create a tuple of the list
 # Mess around with the list methods, count, index, insert, pop, remove, reverse, append and sort
 # Notice any differences between tuples and lists
@@ -371,8 +373,9 @@ solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for numbe
 #index
 
 #######################################################################################################################
-#TUPLES ARE HASHABLE - gotcha
-# Exercise 3: Build an address book only using lists (the lists can be lists of tuples of objects)
+# Exercise 14 (alex)
+# Exercise 3: Build a phone book only using lists (for this example the lists can be lists of tuples)
+#Example: ("FirstName LastName", "312-999-9090") is an item in this list.
 
 # Answer
 # Lists of tuples
@@ -386,32 +389,33 @@ solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for numbe
 # phonebookNumbers = ['555-555-5555', '212-555-5555']
 # print(phonebookNames[0])
 # print(phonebookNumbers[0])
+#######################################################################################################################
+# Exercise 15 (Alex) : Build a look up function for your address book
+# Input is (phonebook - a list , name)
+# Output is something like this "John Doe's phone number is 555-555-5555"
 
-#todo alex
-# Exercise 4 : Build a look up function for your address book
-
-# Answer
-# phonebook = [
+# Answer:
+#phonebook = [
 #    ("John Doe", "555-555-5555"),
 #    ("Albert Einstein", "212-555-5555"),
 # ]
-# print(phonebook)
+#print(phonebook)
 
-# def find_phonenumber(phonebook, name):
+#def find_phonenumber(phonebook, name):
 #    for n, p in phonebook:
 #        if n == name:
 #            return p
 #        return None
 
-# print "John Doe's phone number is", find_phonenumber(phonebook, "John Doe")
-
-# TODO ALEX: CLEAN THIS UP
-# Exercise 5 : Build a phone book using dictionary
-
-# USES
-
+#print("John Doe's phone number is", find_phonenumber(phonebook, "John Doe") )
+#######################################################################################################################
+# (alex)
+# Exercise 16 : Build a phone book using dictionary
+#Example of a dictionary - but change this to a phonebook with names: Jane Doe and phone numbers 555-555-5555
 #a = { 'x':1, 'y':2, 'z':3 }
 #b = { 'w': 10, 'x': 11, 'y': 12 }
+#Also, make a call to print out one example of name and phone number like
+#Show that you can output something like this "John Doe's phone number is 555-555-5555" using your dictionary
 
 
 # answer
@@ -421,18 +425,17 @@ solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for numbe
 # }
 # print "John Doe's phone number is", phonebook["John Doe"]
 
+#######################################################################################################################
+#DISCUSSION OF TWO OTHER EXAMPLES
 #Vitamins and minerals that go with vegtables
 # Shoes and sizes of shoes but you want to track the type of shoe
+#Discussion of when to use a list and when to use a dictionary
+#DISCUSSION OF USES of dictionaries
 
-
-
-#ALEX SECTION
-# SECTION ON BEGINNING DICTIONARY STUFF - Python Pocket reference section
-# Fluent python here the beginning section
-
-#Section that plays with Dictionaries
-
+#######################################################################################################################
+#Exercise 17: Play with dictionaries - just use some of the basic functions
 #Section on initialization - take from O'Reilly Python Pocket Reference by Mark Lutz
+#Uncomment and play with this section so that you learn how to manipulate dictionaries
 
 #Any immutable object can be a dictionary key (string, number, tuple)
 #Class instances can be keys if they inherit hashing methods
@@ -499,16 +502,15 @@ solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for numbe
 
 
 
-
-#TODO ALEX
+#######################################################################################################################
+#Discussion - (alex)
 # Concept of a hash table
 # Concept of open addressing (one object per bucket) and chaining (linked list in each bucket)
-
 # Lookup for a dictionary is constant because O(n) lookup and O(1) for insertion
 
 # A unique object that can
 # https://wiki.python.org/moin/TimeComplexity
-
+#######################################################################################################################
 
 
 #TODO ALEX
