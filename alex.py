@@ -1,17 +1,14 @@
 # Question 1: Make sure python is loaded and working
+# Exercise 1: Make sure python is loaded and working
 # Uncomment the below code and run it
-# print("Hello world!")
-# TODO: BETHANY - HAVE PEOPLE PRINT OUT THEIR VERSION
+#import sys
+#print(sys.version_info)
+#print(sys.version)
+#print("Hello world!")
 
-#TODO: ALEX - have some memory sticks of tutorial
-
-#ALEX
-# Question 2: Get rid of all of the duplicates in this list.
+#######################################################################################################################
+# Exercise 2: Get rid of all of the duplicates in this list.
 # Think about the complexity of your solution.
-# Complexity cheetsheet http://bigocheatsheet.com/
-# You will find it is O(n^2), please make sure you can explain why as an exercise
-# Cool link https://www.peterbe.com/plog/uniqifiers-benchmark
-# https://wiki.python.org/moin/TimeComplexity
 
 #myList = ['c', 'd', 'c', 'a', 'b', 'c', 'a', 'z', 'd', 'e', 'f', 'f', 'g']
 
@@ -23,29 +20,113 @@
 #        newList.append(i)
 
 #print(newList)
-#---------------------------------------------------------------------------------------------------------------------
+
+#RESOURCES
+# Complexity cheetsheet http://bigocheatsheet.com/
+# You will find it is O(n^2), please make sure you can explain why as an exercise
+# Cool link https://www.peterbe.com/plog/uniqifiers-benchmark
+# https://wiki.python.org/moin/TimeComplexity
+
+#######################################################################################################################
+# Exercise 3: Run this timeit example and play with it.
+
+#import timeit
+
+#setup = '''myList = ['c', 'd', 'c', 'a', 'b', 'c', 'a', 'z', 'd', 'e', 'f', 'f', 'g']
+#'''
+
+#statement_A = '''
+#newList = []
+#for i in myList:
+#    if i not in newList:
+#        newList.append(i)
+#'''
+
+#print(timeit.timeit(stmt=statement_A, setup=setup, number=10000))
+
+
+#print(timeit.timeit(stmt=statement_B, setup=setup, number=10000))
+
+########################################################################################################################
+
+# Exercise 4: Use the skills you just learned. Create a list with a mix of upper case and lower case letter
+# And then use timeit to time your algorithm for filtering out the upper case letters.
+
+
+########################################################################################################################
+
+#PAUSE HERE FOR A WORD ABOUT PYTHONIC
+'''
+Thank you Python Foundation & Lea Verou
+
+PEP8 (Code Formatting)            https://www.python.org/dev/peps/pep-0008/
+An alternate view on spaces       http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/
+
+PEP202 (list comprehensions)      https://www.python.org/dev/peps/pep-0202/
+PEP274(dictionary comprehensions) https://www.python.org/dev/peps/pep-0274/
+PEP20 (The Zen of Python)         'import this' in the Python shell
+
+"Programs must be written for people to read,
+and only incidentally for machines to execute." -- Harold Abelson (Structure and Interpretation of Computer Programs)
+
+"Code is read much more often than it is written" -- Guido VanRossum
+'''
+
+#EXERCISE 5 - to get the zen of python
+#UNCOMMENT THIS LINE!
+#import this
+########################################################################################################################
+
+#PAUSE HERE FOR A WORD ABOUT LIST COMPHREHENSIONS
+
+'''
+Quick Examples
+
+this                                                                becomes
+
+#symbols = '$¢£¥€¤'                                                  symbols = '$¢£¥€¤'
+codes = []                                                          codes = [ord(caracter) for character in symbols]
+for symbol in symbos:
+    codes.append(ord(symbol))
+
+this                                                                becomes
+
+results = []                                                        results = [num ** 2 if num % 2 == 0 else num ** 3 for num in range(1, 21)]
+for num in range(1, 21):
+    if num % 2 == 0:
+        results.append(num ** 2)
+    else:
+        results.append(num ** 3)
+
+#RESOURCES
+'''
+
+'''
+______________________________________________________
+LIST COMPREHENSIONS
+________________________________________________________
+Thank you
+Bruce Eckel  -- Python3 Patterns & Idioms   http://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html
+Mark Pilgrim -- Dive into Python3           www.diveintopython3.net
+Obi Ike-Nwosu                               http://intermediatepythonista.com/python-comprehensions
+Python Foundation                           https://docs.python.org/3/howto/functional.html.
+
+With exercises help from
+Trey Hunner                                 http://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/
+Boston Python                               http://puzzles.bostonpython.com/
+github/zhiwehu/Python-programming-exercises
+'''
 
 
 
-#TODO: BETHANY - write 4 LIST comphrenehsions to teach comphrenehsnions here! PYTHONIC
-
-# TO DO; BETHANY TO DO - fix this one up - what is pythonic and not pythonic
-# Reduce lines of code is comprehensions - there is debate on this topic (doesn't make it faster)
-#JUst a nice way of writing
-# INTRODUCE COMPREHENSIONS RIGHT THERE - a loop flatended to one line
-# LIST COMPHRENSION
-# some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
-# duplicates = [x for x in some_list if some_list.count(x) > 1]
-# print(duplicates)
-
-
+########################################################################################################################
 #15 to 20 mins
 #TODO : Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
 #EXERCISES - here
 #TODO: Show how tuple is immutable
 
 
-
+########################################################################################################################
 #ALEX
 #Question 3 - Create a list of the months of a year 'jan', 'feb', .... ' dec'
 # and use the tuple(myList) function to create a tuple of the list
@@ -261,7 +342,7 @@ class HashTable:
     def printHashTable(self):
         for i, val in enumerate(self.myHashTable):
             if val is not None:
-                print i, val
+                print(i, val)
 
     def hashIt(self, value):
         #Take the first three letters of the string
@@ -371,7 +452,7 @@ phonebook = {
     "Gertrude B. Elion" : "757-698-1234",
     "Ada Lovelace" : "614-987-1456"
 }
-print "Ada's phone number is", phonebook["Marie Curie"]
+print("Ada's phone number is", phonebook["Marie Curie"])
 
 # So, the result for Marie Curie and Chien-Shiung Wu would be "Curie-Wu Household" : "555-555-5555
 # This way we would only have one entry per household. (They share a phone)
