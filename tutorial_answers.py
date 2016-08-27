@@ -41,9 +41,23 @@
 
 #15 to 20 mins
 #TODO : Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
+# def add_two(n):
+#   return n + 2
+# x = [add_two(i) for i in range(10)]
+# vs. 
+# y = [i + 2 for i in range(10)]
+
 #EXERCISES - here
 #TODO: Show how tuple is immutable
+# tup1 = ('PyLadies', 'Oakland', 1, 2)
+# tup2 = tup1
 
+# tup1 is tup2 # True, look at id(tup1) & id(tup2)
+# tup1 == tup2 # True
+
+# tup1 = ('PyLadies', 'Oakland', 1, 3)
+# id(tup1) # different
+# tup1[0] = 'Hello' # will have a type error saying that it won't support item assignment
 
 
 #ALEX
@@ -325,10 +339,14 @@
 
 ---------------------------------------------------------------------------------------------------------------------
 
-#TODO - JOUELLA PEP8 WHAT IS PYTHONIC - reserve indexiging with slicing and performance and other PEP 8 stuff
-#TIMEIT WILL HAVE BEEN INTRODUCED
-
-
+#TODO - JOUELLA PEP8 WHAT IS PYTHONIC
+# from http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#list-comprehensions
+# exercise: try to convert this 
+# new_list = []
+# for item in a_list:
+#    if condition(item):
+#       new_list.append(fn(item)) 
+# to pythonic 
 
 
 
@@ -342,8 +360,10 @@
 
 -------------------------------------------------------------------------------------------------------------------
 #TODO - JOUELLA - NAMED TUPLES
-
-
+# from collections import namedtuple
+# Person = namedtuple('Person', 'name age height')
+# Person = namedtuple('Person', 'name age height', verbose=True), will print out the class definition
+# mara = Person(name='Rooney Mara', 'age=26, height=5.2)
 #________________________________________________________________________________________________________________
 
 #TODO BETHANY - END SECTION 
