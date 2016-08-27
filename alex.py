@@ -41,23 +41,9 @@
 
 #15 to 20 mins
 #TODO : Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
-# def add_two(n):
-#   return n + 2
-# x = [add_two(i) for i in range(10)]
-# vs. 
-# y = [i + 2 for i in range(10)]
-
 #EXERCISES - here
 #TODO: Show how tuple is immutable
-# tup1 = ('PyLadies', 'Oakland', 1, 2)
-# tup2 = tup1
 
-# tup1 is tup2 # True, look at id(tup1) & id(tup2)
-# tup1 == tup2 # True
-
-# tup1 = ('PyLadies', 'Oakland', 1, 3)
-# id(tup1) # different
-# tup1[0] = 'Hello' # will have a type error saying that it won't support item assignment
 
 
 #ALEX
@@ -259,6 +245,63 @@
 # Because you can't reduce it to a unique value because it might change and the hash funciton would change.
 
 
+import re
+
+class HashTable:
+    myHashTable = []
+
+    def __init__(self):
+        self.myHashTable = [None] * 1000
+
+    def addToHash(self, name):
+        index = self.hashIt(name)
+        self.myHashTable[index] = name
+
+
+    def printHashTable(self):
+        for i, val in enumerate(self.myHashTable):
+            if val is not None:
+                print i, val
+
+    def hashIt(self, value):
+        #Take the first three letters of the string
+        #Get the ord('f') of each of these first three chars
+        #Add these
+        #return the hash for hashing
+        regExString = r'^[A-Za-z]{3}$'
+        m = re.match(regExString,value)
+        if m is not None:
+           a = ord(value[0])
+           b = ord(value[1])
+           c = ord(value[2])
+           d = a + b + c
+           print(str(a) + " " + str(b) + " " + str(c) + " " +  str(d))
+        else:
+            print(str + " Failed input - this function only takes 3 letters")
+
+        return d
+
+
+myHash = HashTable()
+myHash.addToHash('foo')
+myHash.addToHash('boo')
+myHash.addToHash(('cry'))
+myHash.addToHash('oof')
+results = myHash.printHashTable()
+print(results)
+
+
+
+
+
+
+
+
+
+
+
+
+
 #TODO ALEX  - fluent python book
 # Exercise 8 - Illustrate the difference between a hash table and a set. (review dictionary )
 # Sets are just hashtables without values or dictionaries without values. Lists are resizable arrays that track
@@ -298,20 +341,55 @@
 #TODO ALEX
 # ABUSES Of Dictionaries
 
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+deduped = []
+
+for value in some_list:
+    if value not in deduped:
+        deduped.append(some_list.pop(some_list.index(value)))
+
+print(deduped)
+print(some_list)
+
+# Adding a new item to a dictionary can cause the hash table to change. During this process, the keys might
+# change their order in the underlying datastructure. You can't reliably predict what or when this will happen.
+# If you are iterating over the dictionary keys and changing them at the same time, your loop may
+# not scan all of the items as expected.
+# Best Practice - If you need to scan and add items to a dictionary, do it in steps
+# 1. Read the dict from start to finish and collect the needed additions in a second dict
+# 2. Update the first one with the second one in a separate move
+
+#EXERCISE - Take this phonebook dictionary and write a function that find duplicate phone numbers (they must be
+# roommates in those cases) and then update the keys to read LastName1 - LastName2 Household
+phonebook = {
+    "Marie Curie": "555-555-5555",
+    "Rosalind Franklin" : "212-555-5555",
+    "Lise Meitner" : "212-555-5555",
+    "Chien-Shiung Wu" : "555-555-5555",
+    "Rita Levi-Montalcini" : "510-908-1234",
+    "Barbara McClintock" : "415-987-4313",
+    "Gertrude B. Elion" : "757-698-1234",
+    "Ada Lovelace" : "614-987-1456"
+}
+print "Ada's phone number is", phonebook["Marie Curie"]
+
+# So, the result for Marie Curie and Chien-Shiung Wu would be "Curie-Wu Household" : "555-555-5555
+# This way we would only have one entry per household. (They share a phone)
+#However, make this change following the best practice above and avoiding an abuse of dictionaries, which is changing
+#dictionary keys (changing the hashtable) at the same time that you are iterating through it
+
+
+
+
+
+
+
 #Adding items to a dict may change the order of existing keys
 
 #MEMORY - don't put too much in memory
 
 #AFTER
-#some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
-#deduped = []jojofabe@gmail.com
 
-#for value in some_list:
-#    if value not in deduped:
-#        deduped.append(some_list.pop(some_list.index(value)))
-
-#print(deduped)
-#print(some_list)
 
 #read the dict from start to finish and collect the needed additions in a second dict. Then update the first one with it.
 #Exercise to
@@ -339,14 +417,10 @@
 
 #---------------------------------------------------------------------------------------------------------------------
 
-#TODO - JOUELLA PEP8 WHAT IS PYTHONIC
-# from http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#list-comprehensions
-# exercise: try to convert this 
-# new_list = []
-# for item in a_list:
-#    if condition(item):
-#       new_list.append(fn(item)) 
-# to pythonic 
+#TODO - JOUELLA PEP8 WHAT IS PYTHONIC - reserve indexiging with slicing and performance and other PEP 8 stuff
+#TIMEIT WILL HAVE BEEN INTRODUCED
+
+
 
 
 
@@ -360,10 +434,8 @@
 
 #-------------------------------------------------------------------------------------------------------------------
 #TODO - JOUELLA - NAMED TUPLES
-# from collections import namedtuple
-# Person = namedtuple('Person', 'name age height')
-# Person = namedtuple('Person', 'name age height', verbose=True), will print out the class definition
-# mara = Person(name='Rooney Mara', 'age=26, height=5.2)
+
+
 #________________________________________________________________________________________________________________
 
 #TODO BETHANY - END SECTION 
