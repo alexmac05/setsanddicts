@@ -117,10 +117,228 @@ Boston Python                               http://puzzles.bostonpython.com/
 github/zhiwehu/Python-programming-exercises
 '''
 
+'''
+So WTF are comprehensions?
+Comprehensions in Python are syntactic constructs that allow sequences
+to be built from other sequences. Python3 (and Python 2.7.0++) come
+with different comprehension flavors:  List, Dictionary, and Sets.
+
+A comprehension generally has 4 parts:
+
+1)  An input sequence (in Python, this is anything that's *iterable*)
+	thise includes strings, files, lists, arrays, sets, streams, or dictionaries
+	see https://docs.python.org/3.5/glossary.html#iterable for more info
+
+2)  One (or more) variables representing the members of the input sequence
+
+3)  An optional predicate expression used to filter the data for output
+
+4)  An output expression used to produce elements of the output data
+    structure from members of the input sequence
+
+
+The easiest way to think about it is as a compacted, flattened loop, although it's a
+little bit of a shift in thinking:
+
+
+[Output Expression(4)  Input Sequence(2&1)  Optional Predicate (3)]
+
+input_list = [1,2,3,4,5,6,7,8,9]
+output_list = []
+
+for item in input_list:              -->  this is the Input Expression
+	if item%2 == 0:                  -->  this is the Predicate, or *Filter*
+		output_list.append(item**2)  -->  this is the Output Expression
+
+
+turns into
+
+input_list = [1,2,3,4,5,6,7,8,9]
+output_list = [item**2 for item in input_list if item%2==0]
+
+
+Of course, not everything can be (or should be!) compressed in this way.
+
+
+
+Rules of thumb for comprehensions:
+1)  Use a comprehension if you know your outpt needs to be in list
+    (or dictionary or set) and your input(s) is of an *iterable* type
+
+2)  Use a comprehension if you find yourself looping through a set of expressions
+    to produce values that are appended to a list, dictionary or set
+    (If iterations are executed in order to build a composite value)
+
+3)  Use a comprehension if a loop increases the number of function calls
+    (.append() is a function call that's omitted if you use a comprehension)
+
+4)  If you are only using the list for it's *side effects*, consider using another
+    format (lists are compairatively memory expensive)
+    ...ie reversing a sentance by reverse sorting and re-joining.
+
+5)  If you have to nest several comprehensions, consider seperating out the steps
+    or the loop to increase readability (readability counts!)
+'''
+
+########################################################################################################################
+#EXERCISE 6 - Rewrite this look into a list comprehension
+#Convert the first exercise into a comprehension
+
+#my_list = ['c', 'd', 'c', 'a', 'b', 'c', 'a', 'z', 'd', 'e', 'f', 'f', 'g']
+#new_list = []
+
+#for i in my_list:
+#    if i not in new_list:
+#        new_list.append(i)
+
+#print(new_list)
+
+
+#Solution:
+#new_list = [x for x in my_list if my_list.count(x) < 2]
+#print(new_list)
+########################################################################################################################
+#EXERCISE 7
+# Convert this list and loop into a list comprehension
+
+
+#input_list = [25, 8, 'C', 'l', 'Z', '7', 'l', 'g', 'u', 19, 14, 7, '7', 'o', 3, 17, 6, 21, 'q', 21, 'T', 6, 23, 'M', 'B', 9, 4, 22, 'w', 20, 'D', 'w', 'D', 7, '0', '7', 8, 'Z', 1, 18, 4, 'Q', 'W', 15, 'K', 13, 8, 'k', 0, 11]
+#squared_numbers = []
+
+#for item in input_list:
+#	if isinstance(item, int):
+#		squared_numbers.append(item**2)
+#print(squared_numbers)
+
+#Solution:
+
+#squared_numbers = [number**2 for number in input_list if isinstance(number, int)]
+#print(squared_numbers)
 
 
 ########################################################################################################################
-#15 to 20 mins
+#Exercise 8
+# Convert this list/list comprehension into a list/loop:
+'''
+input_list = ['s', 'dd', 'v', 'TT', 'l', 'r', 'II', 'u', 'H', 'E', 'mm', 'qq', 'o', 'UU', 'nn', 'RR', 'YY', 'c', 'BB', 'P', 'ff', 'f', 'nn', 'bb', 'D', 'JJ', 'hh', 'k', 'y', 'F', 'J', 'dd', 'kk', 'JJ', 'L', 'jj', 'cc', 'f', 'P', 'KK', 'L', 'vv', 'CC', 'D', 'z', 'SS', 'L', 'E', 'r', 'b']
+
+doublecaps = [item for item in input_list if item.isupper() and len(item)>1]
+
+
+Solution:
+
+doublecaps = []
+for item in input_list:
+	if item.isupper() and len(item)> 1:
+		doublecaps.append(item)
+'''
+# _____________________________________________________
+
+# Exercise  9
+# Convert This list and loop into a list comprehension
+'''
+import string
+
+input_list = ['w', 8, 12, 4, 13, 'O', '7', 20, 'q', '3', 'v', 'E', '4', 1, 18, 1, 'e', 'I', 23, 'n', 12, 8, 3, 5, 5, 3, 21, 'H', 19, 14, 5, 'a', 'Z', 'Y', 23, 'g', 'p', 'Y', 'r', 'j', 'y', 'x', 0, '0', 16, 'U', 'S', 'k', 'D', 'D']
+
+numbers_and_letters = []
+
+for item in input_list:
+	if isinstance(item, int):
+		numbers_and_letters.append(item**2)
+	elsif item.isalpha():
+		numbers_and_letters.append(item)
+
+
+Solution:
+import string
+numbers_and_letters = [item**2 if isinstance(item, int) else item if item.isalpha() else None for item in my_list]
+'''
+# ______________________________________________________
+# Exercise 10
+
+# Write a program which will find all numbers between 2000 and 3200 which are divisible by 7 but are not a multiple of 5.
+# Output should be a list (try doing this with a comprehension)
+
+'''
+Solution:
+l=[]
+for i in range(2000, 3201):
+    if (i%7==0) and (i%5!=0):
+        l.append(i)
+
+OR
+
+l = [i for i in range(2000, 3201) if (i%7==0) and (i%5!=0)]
+'''
+
+# ___________________________________________
+# Exercise 11
+# Write a function/comprehension which can compute the factorials of a list of numbers.
+# The results should be returned in a list.
+
+# Suppose the following input is supplied to the program:
+# [7, 8, 9]
+
+# Then, the output should be:
+# [5040, 40320, 362880]
+
+# Hint:  You can use the math module (math.factorial()) or write your own helper function
+
+# Extras: Do it without calling the math module (Hint: try using reduce()), try using reduce() and operator.mul, try using only nested lists inside the comprehension.
+
+
+'''
+input_list = [7,8,9]
+
+
+Solution #1 using the math module:
+
+from math import factorial
+solution = [factorial(x) for x in input_list]
+
+
+Solution #2 using helper functions:
+
+def fact(x): #recursive helper method
+    if x == 0:
+        return 1
+    return x * fact(x - 1)
+
+
+def fact(x):  #iterative helper method
+	factorial = 1
+
+	for number in range(1, x+1):
+		factorial = factorial*number
+	return factorial
+
+
+solution = [fact(x) for x in input]
+
+
+
+Extra Method #1 using a lambda:
+
+from functools import reduce
+solution = [reduce(lambda a, b: a*b, range(1, number+1)) for number in my_list]
+
+Extra Methon #2 using reduce() and operator.mul
+
+from functools import reduce
+from operator import mul
+solution = [reduce(mul, range(1, number+1)) for number in my_list]
+
+
+Extra Method #3 using list slices #do NOT do this at home!!:
+
+solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for number in my_list]
+'''
+
+# ______________________________________
+
+########################################################################################################################
+
 #TODO : Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
 #EXERCISES - here
 #TODO: Show how tuple is immutable
@@ -128,7 +346,7 @@ github/zhiwehu/Python-programming-exercises
 
 ########################################################################################################################
 #ALEX
-#Question 3 - Create a list of the months of a year 'jan', 'feb', .... ' dec'
+#Exercise 12 - Create a list of the months of a year 'jan', 'feb', .... ' dec'
 # and use the tuple(myList) function to create a tuple of the list
 # Mess around with the list methods, count, index, insert, pop, remove, reverse, append and sort
 # Notice any differences between tuples and lists
@@ -152,31 +370,7 @@ github/zhiwehu/Python-programming-exercises
 
 #index
 
-
-
-
-
-
-
-
-#TODO: ALEX - clean up, Alex to talk about tuples introduce that and lists of tuples why it is helpful
-#TUPLES - unique and difference between tuples and lists
-#Exercise - Unpacking a sequence into separate variables
-# This section is from the python cookbook, 3rd edition
-# You can unpack any sequence into variables using a simple assignment operation. The only requirement is that
-# the number of variables and structure match the sequence.
-# Example
-#p = (4,5) # a tuple
-#x, y = p
-#print(x)
-#print(y)
-
-#data = ['ACME', 50, 91.1, (2012, 12, 21)]
-#names, shares, price, date = data
-#print(date)
-
-
-
+#######################################################################################################################
 #TUPLES ARE HASHABLE - gotcha
 # Exercise 3: Build an address book only using lists (the lists can be lists of tuples of objects)
 
@@ -325,7 +519,7 @@ github/zhiwehu/Python-programming-exercises
 # Example of something that is unhashable - another list. lists are mutable. if a datatype is mutable it is not hashable
 # Because you can't reduce it to a unique value because it might change and the hash funciton would change.
 
-
+'''
 import re
 
 class HashTable:
@@ -371,7 +565,7 @@ myHash.addToHash('oof')
 results = myHash.printHashTable()
 print(results)
 
-
+'''
 
 
 
@@ -422,6 +616,7 @@ print(results)
 #TODO ALEX
 # ABUSES Of Dictionaries
 
+'''
 some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
 deduped = []
 
@@ -431,13 +626,14 @@ for value in some_list:
 
 print(deduped)
 print(some_list)
+'''
 
 # Adding a new item to a dictionary can cause the hash table to change. During this process, the keys might
 # change their order in the underlying datastructure. You can't reliably predict what or when this will happen.
 # If you are iterating over the dictionary keys and changing them at the same time, your loop may
 # not scan all of the items as expected.
-# Best Practice - If you need to scan and add items to a dictionary, do it in steps
-# 1. Read the dict from start to finish and collect the needed additions in a second dict
+# Best Practice - If you need to scan and update items to a dictionary, do it in steps
+# 1. Read the dict from start to finish and collect the needed updates in a second dict
 # 2. Update the first one with the second one in a separate move
 
 #EXERCISE - Take this phonebook dictionary and write a function that find duplicate phone numbers (they must be
@@ -452,7 +648,7 @@ phonebook = {
     "Gertrude B. Elion" : "757-698-1234",
     "Ada Lovelace" : "614-987-1456"
 }
-print("Ada's phone number is", phonebook["Marie Curie"])
+#print("Ada's phone number is", phonebook["Marie Curie"])
 
 # So, the result for Marie Curie and Chien-Shiung Wu would be "Curie-Wu Household" : "555-555-5555
 # This way we would only have one entry per household. (They share a phone)
