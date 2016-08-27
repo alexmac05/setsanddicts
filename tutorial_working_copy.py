@@ -328,14 +328,20 @@
 
 #solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for number in my_list]
 
-########################################################################################################################
+######################################################################################################################
+# Exercise 12 - Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
+# def add_two(n):
+#   return n + 2
+# x = [add_two(i) for i in range(10)]
+# vs.
+# y = [i + 2 for i in range(10)]
 
-#JOUELLA SECTION -- Tuples are immutable -- and perhaps pythontutor.com??
 
 
-########################################################################################################################
-#ALEX
-#Exercise 12 - Create a list of the months of a year 'jan', 'feb', .... ' dec'
+# ####################################################################################################################
+
+# Exercise 13 (Alex) -
+# Create a list of the months of a year 'jan', 'feb', .... ' dec'
 # and use the tuple(myList) function to create a tuple of the list
 # Mess around with the list methods, count, index, insert, pop, remove, reverse, append and sort
 # Notice any differences between tuples and lists
@@ -345,23 +351,24 @@
 #
 # Create a list and create a tuple both that represent the months of a year
 
-#Answer 3
-#myListMonths = ['January', 'Feb', 'march', 'april', 'may', 'june', 'july', 'august', 'sept', 'oct', 'nov', 'dec', 'January']
-#myTupleMonths = tuple(myListMonths)
+# Answer 3
+# myListMonths = ['January', 'Feb', 'march', 'april', 'may', 'june', 'july', 'august', 'sept', 'oct', 'nov', 'dec', 'Ja
+# myTupleMonths = tuple(myListMonths)
 
-#count
+# count
 # lists
-#count = myListMonths.count('January')
-#print(count)
-#Tuples
-#count = myTupleMonths.count('January')
-#print(count)
+# count = myListMonths.count('January')
+# print(count)
+# Tuples
+# count = myTupleMonths.count('January')
+# print(count)
 
-#index
+# index
 
-#######################################################################################################################
-#TUPLES ARE HASHABLE - gotcha
-# Exercise 13: Build an address book only using lists (the lists can be lists of tuples of objects)
+######################################################################################################################
+# Exercise 14 (alex)
+# Exercise 3: Build a phone book only using lists (for this example the lists can be lists of tuples)
+# Example: ("FirstName LastName", "312-999-9090") is an item in this list.
 
 # Answer
 # Lists of tuples
@@ -375,11 +382,12 @@
 # phonebookNumbers = ['555-555-5555', '212-555-5555']
 # print(phonebookNames[0])
 # print(phonebookNumbers[0])
+######################################################################################################################
+# Exercise 15 (Alex) : Build a look up function for your address book
+# Input is (phonebook - a list , name)
+# Output is something like this "John Doe's phone number is 555-555-5555"
 
-#todo alex
-# Exercise 4 : Build a look up function for your address book
-
-# Answer
+# Answer:
 # phonebook = [
 #    ("John Doe", "555-555-5555"),
 #    ("Albert Einstein", "212-555-5555"),
@@ -392,16 +400,15 @@
 #            return p
 #        return None
 
-# print "John Doe's phone number is", find_phonenumber(phonebook, "John Doe")
-
-#######################################################################################################################
-# TODO ALEX: CLEAN THIS UP
-# Exercise 14 : Build a phone book using dictionary
-
-# USES
-
-#a = { 'x':1, 'y':2, 'z':3 }
-#b = { 'w': 10, 'x': 11, 'y': 12 }
+# print("John Doe's phone number is", find_phonenumber(phonebook, "John Doe") )
+######################################################################################################################
+# (alex)
+# Exercise 16 : Build a phone book using dictionary
+# Example of a dictionary - but change this to a phonebook with names: Jane Doe and phone numbers 555-555-5555
+# a = { 'x':1, 'y':2, 'z':3 }
+# b = { 'w': 10, 'x': 11, 'y': 12 }
+# Also, make a call to print out one example of name and phone number like
+# Show that you can output something like this "John Doe's phone number is 555-555-5555" using your dictionary
 
 
 # answer
@@ -411,67 +418,67 @@
 # }
 # print "John Doe's phone number is", phonebook["John Doe"]
 
-#Vitamins and minerals that go with vegtables
+######################################################################################################################
+# DISCUSSION OF TWO OTHER EXAMPLES
+# Vitamins and minerals that go with vegtables
 # Shoes and sizes of shoes but you want to track the type of shoe
+# Discussion of when to use a list and when to use a dictionary
+# DISCUSSION OF USES of dictionaries
 
+######################################################################################################################
+# Exercise 17: Play with dictionaries - just use some of the basic functions
+# Section on initialization - take from O'Reilly Python Pocket Reference by Mark Lutz
+# Uncomment and play with this section so that you learn how to manipulate dictionaries
 
-#######################################################################################################################
-#ALEX SECTION
-# SECTION ON BEGINNING DICTIONARY STUFF - Python Pocket reference section
-# Fluent python here the beginning section
-
-#Section that plays with Dictionaries
-
-#Section on initialization - take from O'Reilly Python Pocket Reference by Mark Lutz
-
-#Any immutable object can be a dictionary key (string, number, tuple)
-#Class instances can be keys if they inherit hashing methods
+# Any immutable object can be a dictionary key (string, number, tuple)
+# Class instances can be keys if they inherit hashing methods
 
 # A two item dictionary: keys 'spam' and 'eggs'
-#A = {'spam': 2, 'eggs':3}
+# A = {'spam': 2, 'eggs':3}
 
-#Nested dictionaries
-#B = { 'info': {42: 1, type(''):2, 'spam':[]}}
+# Nested dictionaries
+# B = { 'info': {42: 1, type(''):2, 'spam':[]}}
 
-#Creates a dictionary by passing keyword arguments to the type constructor
-#C = dict(name='Bob', age=45, job=('mgr', 'dev'))
+# Creates a dictionary by passing keyword arguments to the type constructor
+# C = dict(name='Bob', age=45, job=('mgr', 'dev'))
 
-#Dictionary comprehension expression
-#D = {c.upper(): ord(c) for c in 'spam'}
-#print(D)
-#print(ord('s'))
+# Dictionary comprehension expression
+# D = {c.upper(): ord(c) for c in 'spam'}
+# print(D)
+# print(ord('s'))
 
-#E = {} # an empty dictionary
+# E = {} # an empty dictionary
 
-#Exercises for this section
-#STEP 1 - Print out all of the keys for dictionary A
-#print(A.keys())
+# Exercises for this section
+# STEP 1 - Print out all of the keys for dictionary A
+# print(A.keys())
 
-#STEP 2 - Print out all of the values for dictionary D
-#print(D.values())
+# STEP 2 - Print out all of the values for dictionary D
+# print(D.values())
 
-#STEP 3 - play with the C.items() function.
-#print(C.items())
+# STEP 3 - play with the C.items() function.
+# print(C.items())
 
-#Step 4 - How would you clear all of the items from dictionary A?
-#A.clear()
-#print(A)
+# Step 4 - How would you clear all of the items from dictionary A?
+# A.clear()
+# print(A)
 
-#Step 5 - Put the values back in A and do a copy (shallow copy) then change a value and print out both
-#F = A.copy()
-#print(F)
-#F['spam'] = 4
-#print(A)
-#print(F)
+# Step 5 - Put the values back in A and do a copy (shallow copy) then change a value and print out both
+# F = A.copy()
+# print(F)
+# F['spam'] = 4
+# print(A)
+# print(F)
 
-#Step 6 - iterate through the dictionary D
-#http://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops-in-python
-#for key, value in D.items():
+# Step 6 - iterate through the dictionary D
+# http://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops-in-python
+# for key, value in D.items():
 #    print key, 'corresponds to', D[key]
 
 
+
 #######################################################################################################################
-#DICTIONARY COMPREHENSIONS
+#DICTIONARY COMPREHENSIONS - Bethany
 
 #Remeber list comprehensions?  These are exactly the same, but for Dictionaries.
 #One gotcha:  there are TWO variables that have to be used.  One for the key, one for the value
@@ -488,7 +495,7 @@
 
 
 #######################################################################################################################
-#Exercise 15
+#Exercise 18
 #Using a dictionary comprehension, build a dictionary from the list of tuples below
 
 
@@ -509,7 +516,7 @@
 
 
 #######################################################################################################################
-#Exercise 16
+#Exercise 19
 #Using a comprehension, create a Dictionary of the lower and uppercase English letters with their 
 #corresponding Unicode Codepoint as the value.
 
@@ -526,7 +533,7 @@
 
 
 #######################################################################################################################
-#Exercise 17
+#Exercise 20
 #Using a comprehension, create a dictionary that lists all numbers under 100 whose cubes are divisible by 4.
 
 #Solution
@@ -573,22 +580,20 @@ print(timeit.timeit(stmt=statement_H, setup=setup, number=10000))
 #######################################################################################################################
 
 #######################################################################################################################
-#TODO ALEX
+# Discussion - (alex)
 # Concept of a hash table
 # Concept of open addressing (one object per bucket) and chaining (linked list in each bucket)
-
 # Lookup for a dictionary is constant because O(n) lookup and O(1) for insertion
 
 # A unique object that can
 # https://wiki.python.org/moin/TimeComplexity
+#######################################################################################################################
 
-
-
-#TODO ALEX
-# Excercise 7 - very simple hash table for illustration
-# KEY AND VALUE
-# SIMPLE HASH TABLE HERE
-
+# Excercise 18 - very simple hash table for illustration and discussion (alex)
+# STEP 1 - play with this and understand it
+# STEP 2 - write something to handle collisions. So, you could put a list into the value and add to the list
+# everytime there was a collision. That is chaining.
+# So, lists can be the values, but lists of lists can't be the values. Values must be hashable.
 # Example of something that is unhashable - another list. lists are mutable. if a datatype is mutable it is not hashable
 # Because you can't reduce it to a unique value because it might change and the hash funciton would change.
 
@@ -640,17 +645,8 @@ print(results)
 
 '''
 
-
-
-
-
-
-
-
-
-
-
-#TODO ALEX  - fluent python book
+#######################################################################################################################
+# TODO ALEX  - fluent python book
 # Exercise 8 - Illustrate the difference between a hash table and a set. (review dictionary )
 # Sets are just hashtables without values or dictionaries without values. Lists are resizable arrays that track
 # What can go in a list can be unhashable
@@ -670,7 +666,18 @@ print(results)
 # intersaction = myListIsNowASet&myOtherListIsNowASet
 # print(intersaction)
 # https://docs.python.org/2/library/stdtypes.html#set
-#---------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 #TODO BETHANY - SET COMPREHENSIONS
 # Set Comprehensions - fluent programming book
