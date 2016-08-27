@@ -329,12 +329,26 @@
 #solution = [j for j in [1] for i in range(2, fac+1)for j in [j*i]][-1] for number in my_list]
 
 ######################################################################################################################
-# Exercise 12 - Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
+
+#EXERCISE A
+# Jouella - PYTHON 3 FUNCTION CALLS ON STACK MEMORY  WRITING EFFECITENT LIST COMPREHENSIONS
 # def add_two(n):
 #   return n + 2
 # x = [add_two(i) for i in range(10)]
 # vs.
 # y = [i + 2 for i in range(10)]
+
+#EXERCISES - here
+#TODO: Show how tuple is immutable
+# tup1 = ('PyLadies', 'Oakland', 1, 2)
+# tup2 = tup1
+
+# tup1 is tup2 # True, look at id(tup1) & id(tup2)
+# tup1 == tup2 # True
+
+# tup1 = ('PyLadies', 'Oakland', 1, 3)
+# id(tup1) # different
+# tup1[0] = 'Hello' # will have a type error saying that it won't support item assignment
 
 
 
@@ -774,11 +788,16 @@ phonebook = {
 
 #---------------------------------------------------------------------------------------------------------------------
 
-#TODO - JOUELLA PEP8 WHAT IS PYTHONIC - reserve indexiging with slicing and performance and other PEP 8 stuff
-#TIMEIT WILL HAVE BEEN INTRODUCED
+#EXERCISE B
+#JOUELLA
 
-
-
+# from http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#list-comprehensions
+# exercise: try to convert this
+# new_list = []
+# for item in a_list:
+#    if condition(item):
+#       new_list.append(fn(item))
+# to pythonic
 
 
 
@@ -790,10 +809,14 @@ phonebook = {
 
 
 #-------------------------------------------------------------------------------------------------------------------
-#TODO - JOUELLA - NAMED TUPLES
+#Exercise C:
+# JOUELLA - NAMED TUPLES
+# from collections import namedtuple
+# Person = namedtuple('Person', 'name age height')
+# Person = namedtuple('Person', 'name age height', verbose=True), will print out the class definition
+# mara = Person(name='Rooney Mara', 'age=26, height=5.2)
 
-
-#________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________
 
 #TODO BETHANY - END SECTION 
 #END EXAMPLES - for people finished
