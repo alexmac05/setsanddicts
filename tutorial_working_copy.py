@@ -680,18 +680,20 @@ print(results)
 # intersaction = myListIsNowASet&myOtherListIsNowASet
 # print(intersaction)
 # https://docs.python.org/2/library/stdtypes.html#set
-# ---------------------------------------------------------------------------------------------------------------------
+#######################################################################################################################
 
+SET COMPHREHENSIONS
 
+Set comprehensions look like list comprehensions, but with {}:
 
+Example -- a set of the squares of numbers 1-10:
+nums = {n**2 for n in range(1, 11)}
 
+alternatively, you can call the set construtor:
 
+set(n**2 for n in range(1,11))
 
-
-
-
-
-
+#######################################################################################################################
 
 #TODO BETHANY - SET COMPREHENSIONS
 # Set Comprehensions - fluent programming book
@@ -705,8 +707,7 @@ print(results)
 #TODO BETHANY - set logical examples
 #1.9 Finding Commonalities in Two Dictionaries chapter 1 Data Structures and Algorithms 3rd edition Python cookbook
 
-#____________________________________________________________________________________________________________________
-
+#######################################################################################################################
 #TODO ALEX
 # ABUSES Of Dictionaries
 
@@ -783,10 +784,7 @@ phonebook = {
 # Set elements must be hashable objects.
 #
 #
-
-
-
-#---------------------------------------------------------------------------------------------------------------------
+#######################################################################################################################
 
 #EXERCISE B
 #JOUELLA
@@ -800,15 +798,122 @@ phonebook = {
 # to pythonic
 
 
+#######################################################################################################################
 
-#--------------------------------------------------------------------------------------------------------------------
-#TODO BETHANY - Peppering stuff there
-# Counter, and default dict #DEQUE - double ended queue - as a stack or a queue (append to either end in constant time)
-# Ordered dictionaries
-# Fluent python here Variations of dict - COLLECTIONS stuff
+#A WORD ON THE COLLECTIONS MODULE
+
+#######################################################################################################################
+#COUNTER
+
+#A Counter is a dict subclass for counting hashable objects.  Its a dictionary
+#where the elements are stored as keys, and their counts are stored as the
+#dictionary values.  Counts are allowed to be any integer value **including**
+#zero or negative numbers.  Counters are similar to the bags or multisets of 
+#other programming languages.
+
+#Counters have two special methods beyond the standard dictionary methods:
+
+#elements() -- returns an iterator over all elements, repeating each as many times as Its
+              count value.
+
+#most_common() -- returns a list of the n most common elements and their counts, sorted
+                 from most common to least.  If n is not specified, *all* elements from the
+                 Counter are returned.
+
+#######################################################################################################################
+#COUNTER EXERCISES
+
+#write a short function to find out if each phrase pair are anagrams of one another:
+#Hint:  This can be done in two lines of code, but watch out for readablity.
+
+#words_list = [('parliament', 'partial men'),  
+		   ('listen', 'silent'), 
+		   ('Clint Eastwood', 'Old West Action'), 
+		   ('Berkeley', 'Rebel Keys'), 
+		   ('Dormitory', 'Dirty Room'),
+		   ('Desperation', 'rope ends it'),
+		   ('Tom Cruise', 'So Im cute'),
+              ('Conversation', 'Voices rant on')]
 
 
-#-------------------------------------------------------------------------------------------------------------------
+#Solution
+#from collections import Counter
+
+#makes a new list of tuples with spaces between words eleminated
+#clean_list = [(item[0].replace(' ', ''), item[1].replace(' ', '')) for item in words_list]
+
+#creates a list that compairs the Counter of one  phrase to a Counter of another
+#result=[Counter(item[0].lower()) == Counter(item[1].lower()) for item in clean_list]
+
+#print(result)
+
+#######################################################################################################################
+
+#Count all the words in the paragraph below, and then print
+#them out in a list sorted from most frequent appearance to 
+#least frequent appearance.
+
+#Hint:  The output can be a list of Tuples here -- OR just the words in frequency order
+#Warning: Remember that some words are capitalized, yet the same as other words
+#         Keep in mind that not all whitespace is created equal, and '--' is not a word
+
+#paragraph = """
+#Four score and seven years ago our fathers brought forth on this continent, a new nation, 
+#conceived in Liberty, and dedicated to the proposition that all men are created equal.
+#
+#Now we are engaged in a great civil war, testing whether that nation, or any nation so 
+#conceived and so dedicated, can long endure. We are met on a great battlefield of that 
+#war. We have come to dedicate a portion of that field, as a final resting place for 
+#those who here gave their lives that that nation might live. It is altogether fitting 
+#and proper that we should do this.
+#
+#But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow 
+#-- this ground. The brave men, living and dead, who struggled here, have consecrated it, 
+#far above our poor power to add or detract. The world will little note, nor long remember 
+#what we say here, but it can never forget what they did here. It is for us the living, rather, 
+#to be dedicated here to the unfinished work which they who fought here have thus far so nobly 
+#advanced. It is rather for us to be here dedicated to the great task remaining before us -- that
+#from these honored dead we take increased devotion to that cause for which they gave the last 
+#full measure of devotion -- that we here highly resolve that these dead shall not have died in 
+#vain -- that this nation, under God, shall have a new birth of freedom -- and that government of 
+# the people, by the people, for the people, shall not perish from the earth.
+#"""
+
+#Solution
+
+#import string
+#import re
+#from collections import Counter
+
+#note the generator form here -- I don't need an itermediate list, so I don't have Python make one
+#def word_count(paragraph):
+#        counts = Counter((re.sub('\W+','', item).lower() for item in paragraph.split()))
+#        return counts.most_common()
+
+#print (word_count(paragraph))
+
+#######################################################################################################################
+
+#Take the same exercise from above, but instead of printing the words in frequency
+#order, print a list of the words grouped together (sorted or not). So all the 
+#'a' strings, follwed by all the 'above' strings, etc.  
+
+#Hint:  you can call sorted() on any iterable.
+
+#Solution:
+#import string
+#import re
+#from collections import Counter
+
+#note the generator form here -- I don't need an itermediate list, so I don't have Python make one
+#def word_count_repeat(paragraph):
+#        counts = Counter((re.sub('\W+','', item).lower() for item in paragraph.split()))
+#        
+#        return sorted(counts.elements())
+
+#print (word_count_repeat(paragraph))
+
+#######################################################################################################################
 #Exercise C:
 # JOUELLA - NAMED TUPLES
 # from collections import namedtuple
@@ -816,11 +921,11 @@ phonebook = {
 # Person = namedtuple('Person', 'name age height', verbose=True), will print out the class definition
 # mara = Person(name='Rooney Mara', 'age=26, height=5.2)
 
-________________________________________________________________________________________________________________
+#######################################################################################################################
 
 #TODO BETHANY - END SECTION 
 #END EXAMPLES - for people finished
-#FIND THE MOST Efficient solution for debbing a large list. I want a list of the duplicates and a debbed list and i don't
+#FIND THE MOST Efficient solution for deduping a large list. I want a list of the duplicates and a debbed list and i don't
 #want duplicates in the dubbed list
 
 #MARKOV CHAINS and dictionaries
