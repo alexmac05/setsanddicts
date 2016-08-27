@@ -1,4 +1,4 @@
-# Question 1: Make sure python is loaded and working
+# Question 1:
 # Exercise 1: Make sure python is loaded and working
 # Uncomment the below code and run it
 #import sys
@@ -184,7 +184,7 @@
 #                                            github/zhiwehu/Python-programming-exercises
 
 ########################################################################################################################
-#EXERCISE 6 - Rewrite this loop into a list comprehension
+#EXERCISE 6 - Rewrite this loop into a list comprehension (Bethany)
 #Convert the first exercise into a comprehension
 
 #my_list = ['c', 'd', 'c', 'a', 'b', 'c', 'a', 'z', 'd', 'e', 'f', 'f', 'g']
@@ -339,7 +339,6 @@
 # y = [i + 2 for i in range(10)]
 
 #EXERCISES - here
-#TODO: Show how tuple is immutable
 # tup1 = ('PyLadies', 'Oakland', 1, 2)
 # tup2 = tup1
 
@@ -555,6 +554,8 @@
 #######################################################################################################################
 #A BREIF LOOK AT PERFORMANCE of List vs Dictionary 
 
+'''
+
 setup = '''import string
 uniList = [('a', 97), ('b', 98), ('c', 99), ('d', 100), ('e', 101), ('f', 102), ('g', 103), ('h', 104), ('i', 105), 
            ('j', 106), ('k', 107), ('l', 108), ('m', 109), ('n', 110), ('o', 111), ('p', 112), ('q', 113), ('r', 114), 
@@ -588,9 +589,11 @@ for letter in lookup:
     code.append(uniDict[letter])
 '''
 
-print(timeit.timeit(stmt=statement_G, setup=setup, number=10000))
-print(timeit.timeit(stmt=statement_H, setup=setup, number=10000))
+#print(timeit.timeit(stmt=statement_G, setup=setup, number=10000))
+#print(timeit.timeit(stmt=statement_H, setup=setup, number=10000))
 
+
+'''
 #######################################################################################################################
 
 #######################################################################################################################
@@ -660,8 +663,8 @@ print(results)
 '''
 
 #######################################################################################################################
-# TODO ALEX  - fluent python book
-# Exercise 8 - Illustrate the difference between a hash table and a set. (review dictionary )
+# ALEX
+# Exercise 19 - Illustrate the difference between a hash table and a set. (review dictionary )
 # Sets are just hashtables without values or dictionaries without values. Lists are resizable arrays that track
 # What can go in a list can be unhashable
 
@@ -682,33 +685,29 @@ print(results)
 # https://docs.python.org/2/library/stdtypes.html#set
 #######################################################################################################################
 
-SET COMPHREHENSIONS
+#SET COMPHREHENSIONS - Bethany DISCUSSION
 
-Set comprehensions look like list comprehensions, but with {}:
+#Set comprehensions look like list comprehensions, but with {}:
 
-Example -- a set of the squares of numbers 1-10:
-nums = {n**2 for n in range(1, 11)}
+#Example -- a set of the squares of numbers 1-10:
+#nums = {n**2 for n in range(1, 11)}
 
-alternatively, you can call the set construtor:
+#alternatively, you can call the set construtor:
 
-set(n**2 for n in range(1,11))
+#set(n**2 for n in range(1,11))
 
 #######################################################################################################################
 
-#TODO BETHANY - SET COMPREHENSIONS
+#BETHANY - SET COMPREHENSIONS
 # Set Comprehensions - fluent programming book
 # Comphrehension of a set
 #some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
 #duplicates = set(x for x in some_list if some_list.count(x) > 1)
 #print(duplicates)
 
-# SECOND COMPHREHENSION EXAMPLE - TODO: BETHANY Super fast example dedupping with list and a set
-
-#TODO BETHANY - set logical examples
-#1.9 Finding Commonalities in Two Dictionaries chapter 1 Data Structures and Algorithms 3rd edition Python cookbook
 
 #######################################################################################################################
-#TODO ALEX
+#ALEX - DISCUSSION
 # ABUSES Of Dictionaries
 
 '''
@@ -731,7 +730,8 @@ print(some_list)
 # 1. Read the dict from start to finish and collect the needed updates in a second dict
 # 2. Update the first one with the second one in a separate move
 
-#EXERCISE - Take this phonebook dictionary and write a function that find duplicate phone numbers (they must be
+######################################################################################################################
+#EXERCISE 20 - Take this phonebook dictionary and write a function that find duplicate phone numbers (they must be
 # roommates in those cases) and then update the keys to read LastName1 - LastName2 Household
 phonebook = {
     "Marie Curie": "555-555-5555",
@@ -751,39 +751,15 @@ phonebook = {
 #dictionary keys (changing the hashtable) at the same time that you are iterating through it
 
 
+########################################################################################################################
 
-
-
-
-
-#Adding items to a dict may change the order of existing keys
-
-#MEMORY - don't put too much in memory
-
-#AFTER
-
-
-#read the dict from start to finish and collect the needed additions in a second dict. Then update the first one with it.
-#Exercise to
-
-
-#A list of hashable items the keys are a list of hashable items. (LIST OR SET)
-
-
-
-
+#DISCUSSION - 2nd ABUSE OF DICTIONARIES
 # - DICS ARE NOT SPACE EFFECIENT - A dictionary is in memory
 # For example, if you are handling a large quantity of records,
-# it makes sense to store them in a list of tuples or named tuples instead of using a list of dictionaries i
-# n JSON style, with one dict per record. Replacing dicts with tuples reduces the memory usage in two ways:
+# it makes sense to store them in a list of tuples or named tuples instead of using a list of dictionaries in
+# JSON style, with one dict per record. Replacing dicts with tuples reduces the memory usage in two ways:
 # by removing the overhead of one hash table per record and by not storing the field names again with each record.
 
-
-# Adding items to a dict may change the order of existing keys
-
-# Set elements must be hashable objects.
-#
-#
 #######################################################################################################################
 
 #EXERCISE B
@@ -800,10 +776,10 @@ phonebook = {
 
 #######################################################################################################################
 
-#A WORD ON THE COLLECTIONS MODULE
+#A WORD ON THE COLLECTIONS MODULE - BETHANY
 
 #######################################################################################################################
-#COUNTER
+#COUNTER - DISCUSSION
 
 #A Counter is a dict subclass for counting hashable objects.  Its a dictionary
 #where the elements are stored as keys, and their counts are stored as the
@@ -814,15 +790,15 @@ phonebook = {
 #Counters have two special methods beyond the standard dictionary methods:
 
 #elements() -- returns an iterator over all elements, repeating each as many times as Its
-              count value.
+              #count value.
 
 #most_common() -- returns a list of the n most common elements and their counts, sorted
-                 from most common to least.  If n is not specified, *all* elements from the
-                 Counter are returned.
+               #  from most common to least.  If n is not specified, *all* elements from the
+               #  Counter are returned.
 
 #######################################################################################################################
 #COUNTER EXERCISES
-
+#EXERCISE 21 - Bethany
 #write a short function to find out if each phrase pair are anagrams of one another:
 #Hint:  This can be done in two lines of code, but watch out for readablity.
 
@@ -848,7 +824,7 @@ phonebook = {
 #print(result)
 
 #######################################################################################################################
-
+#EXERCISE 22 (bethany)
 #Count all the words in the paragraph below, and then print
 #them out in a list sorted from most frequent appearance to 
 #least frequent appearance.
@@ -893,7 +869,7 @@ phonebook = {
 #print (word_count(paragraph))
 
 #######################################################################################################################
-
+#EXERCISE 23
 #Take the same exercise from above, but instead of printing the words in frequency
 #order, print a list of the words grouped together (sorted or not). So all the 
 #'a' strings, follwed by all the 'above' strings, etc.  
@@ -923,8 +899,8 @@ phonebook = {
 
 #######################################################################################################################
 
-#TODO BETHANY - END SECTION 
-#END EXAMPLES - for people finished
+
+#EXTRA CREDIT THINGS TO THINK ABOUT - THE END OF THE TUTORIAL
 #FIND THE MOST Efficient solution for deduping a large list. I want a list of the duplicates and a debbed list and i don't
 #want duplicates in the dubbed list
 
