@@ -337,7 +337,7 @@
 
 
 
----------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------
 
 #TODO - JOUELLA PEP8 WHAT IS PYTHONIC
 # from http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#list-comprehensions
@@ -350,15 +350,15 @@
 
 
 
--
---------------------------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------------------------
 #TODO BETHANY - Peppering stuff there
 # Counter, and default dict #DEQUE - double ended queue - as a stack or a queue (append to either end in constant time)
 # Ordered dictionaries
 # Fluent python here Variations of dict - COLLECTIONS stuff
 
 
--------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------
 #TODO - JOUELLA - NAMED TUPLES
 # from collections import namedtuple
 # Person = namedtuple('Person', 'name age height')
